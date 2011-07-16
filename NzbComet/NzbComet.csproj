@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD96F6C1-342A-4911-8C65-8A7A92C0AE37}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NzbComet</RootNamespace>
+    <AssemblyName>NzbComet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Advanced\NzbConnectionPool.cs" />
+    <Compile Include="Advanced\NzbDownloadQueue.cs" />
+    <Compile Include="ArgumentChecker.cs" />
+    <Compile Include="NntpParser.cs" />
+    <Compile Include="NzbArticleDownloadFailedException.cs" />
+    <Compile Include="NzbArticleNotFoundException.cs" />
+    <Compile Include="NzbAuthenticationFailedException.cs" />
+    <Compile Include="NzbConnection.cs" />
+    <Compile Include="NzbConnectionStatus.cs" />
+    <Compile Include="NzbDecoders\NzbDecoder.cs" />
+    <Compile Include="NzbDecoders\NzbDecoderFactory.cs" />
+    <Compile Include="NzbDecoders\NzbDecoderJob.cs" />
+    <Compile Include="NzbDecoders\NzbDecoderQueue.cs" />
+    <Compile Include="NzbDecoders\yEnc\Advanced\yDecoderConstants.cs" />
+    <Compile Include="NzbDecoders\yEnc\Advanced\yHeader.cs" />
+    <Compile Include="NzbDecoders\yEnc\Advanced\yPartFooter.cs" />
+    <Compile Include="NzbDecoders\yEnc\Advanced\yPartHeader.cs" />
+    <Compile Include="NzbDecoders\yEnc\yDecoder.cs" />
+    <Compile Include="NzbDownload.cs" />
+    <Compile Include="NzbDownloadJob.cs" />
+    <Compile Include="NzbDownloadManager.cs" />
+    <Compile Include="NzbDownloadStatus.cs" />
+    <Compile Include="NzbParser.cs" />
+    <Compile Include="NzbPart.cs" />
+    <Compile Include="NzbPartStatus.cs" />
+    <Compile Include="NzbSegment.cs" />
+    <Compile Include="NzbSegmentDownloadFailedException.cs" />
+    <Compile Include="NzbSegmentStatus.cs" />
+    <Compile Include="NzbServer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerCommands\NzbServerAuthenticatePasswordCommand.cs" />
+    <Compile Include="ServerCommands\NzbServerAuthenticateUserCommand.cs" />
+    <Compile Include="ServerCommands\NzbServerCommand.cs" />
+    <Compile Include="ServerCommands\NzbServerCommandResponse.cs" />
+    <Compile Include="ServerCommands\NzbServerGetBodyCommand.cs" />
+    <Compile Include="ServerCommands\NzbServerJoinGroupCommand.cs" />
+    <Compile Include="ServerCommands\NzbServerQuitCommand.cs" />
+    <Compile Include="ServerCommands\NzbServerSwitchToReaderModeCommand.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
